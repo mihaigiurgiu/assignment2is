@@ -1,15 +1,10 @@
 package org.launchcode.controllers;
 import org.launchcode.models.User;
 import org.launchcode.data.UserRepository;
-import org.launchcode.models.dto.EventTagDTO;
-import org.launchcode.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
 
 
 @Controller
@@ -22,12 +17,12 @@ public class UserController {
     public String home( ) {
         return "users/index";
     }
-    @GetMapping("/users/view")
+    @GetMapping("/users/list")
     public String displayAllUsers(Model model){
         model.addAttribute("title", "All users");
         model.addAttribute("users", userRepository.findAll());
 
-        return "users/view";
+        return "users/list";
 
     }
     @GetMapping("/users/delete")
@@ -50,7 +45,7 @@ public class UserController {
 
     @GetMapping("/users/update")
     public String displayUpdateEmailForm(Model model){
-        model.addAttribute("title", "Update User");
+        model.addAttribute("title", "Update email");
         model.addAttribute("formerEmail", new User());
         model.addAttribute("newEmail", new User());
         return "users/update";

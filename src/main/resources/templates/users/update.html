@@ -6,6 +6,7 @@
 <body class="container">
 
 <nav th:replace="user-fragment :: navigation"></nav>
+
 <form method="post" action="/users/update">
     <label>Former email <input th:field="${formerEmail.email}" class="form-control"></label>
     <label>New email <input th:field="${newEmail.email}" class="form-control"></label>
