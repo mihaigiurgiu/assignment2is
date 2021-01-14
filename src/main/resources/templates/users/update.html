@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <head th:replace=" user-fragment:: head"></head>
+</head>
+<body class="container">
+
+<nav th:replace="user-fragment :: navigation"></nav>
+<form method="post" action="/users/update">
+    <label>Former email <input th:field="${formerEmail.email}" class="form-control"></label>
+    <label>New email <input th:field="${newEmail.email}" class="form-control"></label>
+    <div class="form-group">
+        <input type="submit" value="Update" class="btn btn-success">
+    </div>
+</form>
+
+</body>
+</html>

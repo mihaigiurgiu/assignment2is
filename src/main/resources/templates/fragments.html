@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head th:fragment="head">
+    <meta charset="UTF-8"/>
+    <title>Coding events</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" th:href="@{css/styles.css}">
+
+</head>
+<body>
+    <nav th:fragment="navigation">
+        <h1 th:text="${title}">Coding events</h1>
+        <ul class="nav">
+            <li class="nav-item"><a class="nav-link" href="/events">All Events  </a></li>
+            <li class="nav-item"><a class="nav-link" href="/events/create"> Add Events  </a></li>
+            <li class="nav-item"><a class="nav-link" href="/events/delete">Remove Events  </a></li>
+            <li class="nav-item"><a class="nav-link" href="/events/update">Update name  </a></li>
+            <li class="nav-item"><a class="nav-link" href="/category/eventCategory">All Categories  </a></li>
+            <li class="nav-item"><a class="nav-link" href="/category/eventCategory/create">Create Category</a></li>
+            <li class="nav-item"><a class="nav-link" href="/tags/create">Create Tag</a></li>
+            <li class="nav-item"><a class="nav-link" href="/tags">All Tags</a></li>
+            <div sec:authorize="hasRole('ROLE_ADMIN')">
+                <li class="nav-item"><a class="nav-link" href="/users/index">User management</a></li>
+            </div>
+
+        </ul>
+    </nav>
+</body>
+</html>

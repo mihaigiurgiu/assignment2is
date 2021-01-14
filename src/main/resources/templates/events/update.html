@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace=" fragments :: head"></head>
+<body class="container">
+
+
+<nav th:replace="fragments :: navigation"></nav>
+<form method="post" action="/events/update">
+
+    <label>Former Name
+        <input th:field="${formerName.name}" class="form-control">
+    </label>
+
+    <label>New Name
+        <input th:field="${newName.name}" class="form-control">
+    </label>
+
+    <div class="form-group">
+        <input type="submit" value="Update" class="btn btn-success">
+    </div>
+</form>
+
+</body>
+</html>

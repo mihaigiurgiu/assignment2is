@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:fragment="head">
+    <meta charset="UTF-8"/>
+    <title>Coding events</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" th:href="@{css/styles.css}">
+
+
+</head>
+<body>
+<nav th:fragment="navigation">
+    <h1 th:text="${title}">Coding events</h1>
+    <ul class="nav">
+        <li class="nav-item"><a class="nav-link" href="/users/view">All users </a></li>
+        <li class="nav-item"><a class="nav-link" href="/registration">Add user </a></li>
+        <li class="nav-item"><a class="nav-link" href="/users/delete">Remove user </a></li>
+        <li class="nav-item"><a class="nav-link" href="/users/update">Update email </a></li>
+
+    </ul>
+</nav>
+</body>
+</html>

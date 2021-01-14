@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <head th:replace=" user-fragment:: head"></head>
+
+</head>
+<body class="container">
+
+
+<nav th:replace="user-fragment:: navigation"></nav>
+<h2>User Management</h2>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>User Details</th>
+        <th></th>
+    </tr>
+    </thead>
+
+    <tr th:each="user : ${users}">
+        <td><a th:text="${user.getFirstName()}"></a></td>
+        <td><a th:text="${user.getLastName()}"></a></td>
+        <td><a th:text="${user.getEmail()}"></a></td>
+    </tr>
+</table>
+</body>
+</html>
